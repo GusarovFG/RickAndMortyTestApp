@@ -13,16 +13,12 @@ class CharacterTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     func setupCell(character: Character?) {
-        self.nameLabel.text = character?.name
-        self.speciesLabel.text = character?.species
-        self.genderLabel.text = character?.gender
+        self.characterImageView.layer.cornerRadius = self.characterImageView.frame.width / 2
+        self.nameLabel.text = "Name : \(character?.name ?? "")"
+        self.speciesLabel.text = "specie: \(character?.species ?? "")"
+        self.genderLabel.text = "gender: \(character?.gender ?? "")"
         
         DispatchQueue.global().async {
             guard let imageData = ImageManager.shared.fetchImage(from: character?.image) else { return }

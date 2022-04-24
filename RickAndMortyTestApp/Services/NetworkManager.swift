@@ -7,9 +7,9 @@
 
 import Foundation
 
-class NetwotkManager {
+class NetworkManager {
     
-    static let share = NetwotkManager()
+    static let share = NetworkManager()
     
     private init(){}
     
@@ -67,4 +67,8 @@ class ImageManager {
         guard let imageURL = URL(string: stringURL) else { return nil }
         return try? Data(contentsOf: imageURL)
     }
+}
+
+enum URLS: String {
+    case rickAndMortyapi = "https://rickandmortyapi.com/api/character"
 }
