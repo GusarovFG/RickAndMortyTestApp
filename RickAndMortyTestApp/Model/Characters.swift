@@ -27,4 +27,9 @@ struct Character: Codable {
     let episode: [String]
     let url: String
     let image: String
+    let location: Location
+}
+
+struct Location: Codable {
+    let name: String
 }
