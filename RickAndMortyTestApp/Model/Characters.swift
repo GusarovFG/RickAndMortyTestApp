@@ -26,4 +26,5 @@ struct Character: Codable {
     let gender: String
     let episode: [String]
     let url: String
+    let image: String
 }

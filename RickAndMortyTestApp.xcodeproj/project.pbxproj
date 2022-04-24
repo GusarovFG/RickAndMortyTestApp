@@ -14,6 +14,8 @@
 		FBF7C5B028155D7700205362 /* CharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF7C5AF28155D7700205362 /* CharactersTableViewController.swift */; };
 		FBF7C5B228155E3D00205362 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF7C5B128155E3D00205362 /* Characters.swift */; };
 		FBF7C5B6281560DD00205362 /* NetwotkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF7C5B5281560DD00205362 /* NetwotkManager.swift */; };
+		FBF7C5BA281565D500205362 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF7C5B8281565D500205362 /* CharacterTableViewCell.swift */; };
+		FBF7C5BB281565D500205362 /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBF7C5B9281565D500205362 /* CharacterTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		FBF7C5AF28155D7700205362 /* CharactersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewController.swift; sourceTree = "<group>"; };
 		FBF7C5B128155E3D00205362 /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		FBF7C5B5281560DD00205362 /* NetwotkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwotkManager.swift; sourceTree = "<group>"; };
+		FBF7C5B8281565D500205362 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		FBF7C5B9281565D500205362 /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				FBF7C5B128155E3D00205362 /* Characters.swift */,
+				FBF7C5B8281565D500205362 /* CharacterTableViewCell.swift */,
+				FBF7C5B9281565D500205362 /* CharacterTableViewCell.xib */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -152,6 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBF7C5BB281565D500205362 /* CharacterTableViewCell.xib in Resources */,
 				FBF7C5A828155D2C00205362 /* LaunchScreen.storyboard in Resources */,
 				FBF7C5A528155D2C00205362 /* Assets.xcassets in Resources */,
 			);
@@ -169,6 +176,7 @@
 				FBF7C59C28155D2900205362 /* AppDelegate.swift in Sources */,
 				FBF7C59E28155D2900205362 /* SceneDelegate.swift in Sources */,
 				FBF7C5B228155E3D00205362 /* Characters.swift in Sources */,
+				FBF7C5BA281565D500205362 /* CharacterTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
