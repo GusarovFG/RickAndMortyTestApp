@@ -26,6 +26,22 @@ class DetailViewController: UIViewController {
         fetchImage()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+            self.characterImageView.snp.remakeConstraints { make in
+                make.width.height.equalTo(150)
+                make.leading.trailing.equalToSuperview().inset(200)
+                make.top.equalToSuperview().inset((self.navigationController?.navigationBar.frame.height ?? 0) + 10)
+            }
+        } else {
+            self.characterImageView.snp.remakeConstraints { make in
+                make.width.height.equalTo(300)
+                make.leading.trailing.equalToSuperview().inset(50)
+                make.top.equalToSuperview().inset((self.navigationController?.navigationBar.frame.height ?? 0) + 10)
+            }
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -47,7 +63,7 @@ class DetailViewController: UIViewController {
         self.view.addSubview(self.speciesLabel)
         self.speciesLabel.snp.makeConstraints { make in
             make.width.equalTo(300)
-            make.height.equalTo(50)
+            make.height.equalTo(20)
             make.leading.trailing.equalToSuperview().inset(20)
             make.top.equalTo(self.nameLabel.snp.bottom).offset(5)
         }
@@ -55,7 +71,7 @@ class DetailViewController: UIViewController {
         self.view.addSubview(self.statusLabel)
         self.statusLabel.snp.makeConstraints { make in
             make.width.equalTo(300)
-            make.height.equalTo(50)
+            make.height.equalTo(20)
             make.leading.trailing.equalToSuperview().inset(20)
             make.top.equalTo(self.speciesLabel.snp.bottom).offset(5)
         }
@@ -63,7 +79,7 @@ class DetailViewController: UIViewController {
         self.view.addSubview(self.locationLabel)
         self.locationLabel.snp.makeConstraints { make in
             make.width.equalTo(300)
-            make.height.equalTo(50)
+            make.height.equalTo(20)
             make.leading.trailing.equalToSuperview().inset(20)
             make.top.equalTo(self.statusLabel.snp.bottom).offset(5)
         }
@@ -71,7 +87,7 @@ class DetailViewController: UIViewController {
         self.view.addSubview(self.episodesCountLabel)
         self.episodesCountLabel.snp.makeConstraints { make in
             make.width.equalTo(300)
-            make.height.equalTo(50)
+            make.height.equalTo(20)
             make.leading.trailing.equalToSuperview().inset(20)
             make.top.equalTo(self.locationLabel.snp.bottom).offset(5)
         }
