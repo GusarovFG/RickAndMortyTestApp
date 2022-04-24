@@ -12,40 +12,84 @@ class DetailViewController: UIViewController {
     var character: Character?
     
     var characterImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-    var characterDescription = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    var nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    var speciesLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    var statusLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    var locationLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    var episodesCountLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
         fetchImage()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.view.addSubview(characterImageView)
+        self.view.addSubview(self.characterImageView)
         self.characterImageView.snp.makeConstraints { make in
-            make.width.height.equalTo(self.view.frame.width - 40)
-            make.top.left.right.equalToSuperview().inset(20)
+            make.width.height.equalTo(300)
+            make.leading.trailing.equalToSuperview().inset(50)
+            make.top.equalToSuperview().inset((self.navigationController?.navigationBar.frame.height ?? 0) + 10)
         }
-        self.characterImageView.layer.cornerRadius = self.characterImageView.frame.width / 2
         
-        self.view.addSubview(characterImageView)
-        self.characterDescription.snp.makeConstraints { make in
-            make.top.equalTo(self.characterImageView).offset(20)
-            make.left.right.equalToSuperview().inset(20)
+        self.view.addSubview(self.nameLabel)
+        self.nameLabel.snp.makeConstraints { make in
+            make.width.equalTo(300)
+            make.height.equalTo(50)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(self.characterImageView.snp.bottom).offset(5)
         }
+        
+        self.view.addSubview(self.speciesLabel)
+        self.speciesLabel.snp.makeConstraints { make in
+            make.width.equalTo(300)
+            make.height.equalTo(50)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(self.nameLabel.snp.bottom).offset(5)
+        }
+        
+        self.view.addSubview(self.statusLabel)
+        self.statusLabel.snp.makeConstraints { make in
+            make.width.equalTo(300)
+            make.height.equalTo(50)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(self.speciesLabel.snp.bottom).offset(5)
+        }
+        
+        self.view.addSubview(self.locationLabel)
+        self.locationLabel.snp.makeConstraints { make in
+            make.width.equalTo(300)
+            make.height.equalTo(50)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(self.statusLabel.snp.bottom).offset(5)
+        }
+        
+        self.view.addSubview(self.episodesCountLabel)
+        self.episodesCountLabel.snp.makeConstraints { make in
+            make.width.equalTo(300)
+            make.height.equalTo(50)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(self.locationLabel.snp.bottom).offset(5)
+        }
+        
+        
     }
     
     private func setupUI() {
         
-        self.characterDescription.text = """
-        Name: \(self.character?.name ?? "")
-        Species: \(self.character?.species ?? "")
-        Gender: \(self.character?.gender ?? "")
-        Status: \(self.character?.status ?? "")
-        Location: \(self.character?.location.name ?? "")
-        """
+        self.view.backgroundColor = .white
+        
+        self.nameLabel.text = "Name: \(self.character?.name ?? "")"
+        self.speciesLabel.text = "Species: \(self.character?.species ?? "")"
+        self.statusLabel.text = "Status: \(self.character?.status ?? "")"
+        self.locationLabel.text = "Location: \(self.character?.location.name ?? "")"
+        self.episodesCountLabel.text = "Count of episodes: \(self.character?.episode.count ?? 0)"
+        
+
     }
     
     private func fetchImage() {
@@ -56,14 +100,4 @@ class DetailViewController: UIViewController {
             }
         }
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
