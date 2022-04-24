@@ -13,6 +13,7 @@
 		FBF7C5A828155D2C00205362 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF7C5A628155D2C00205362 /* LaunchScreen.storyboard */; };
 		FBF7C5B028155D7700205362 /* CharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF7C5AF28155D7700205362 /* CharactersTableViewController.swift */; };
 		FBF7C5B228155E3D00205362 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF7C5B128155E3D00205362 /* Characters.swift */; };
+		FBF7C5B6281560DD00205362 /* NetwotkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF7C5B5281560DD00205362 /* NetwotkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FBF7C5A928155D2C00205362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBF7C5AF28155D7700205362 /* CharactersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewController.swift; sourceTree = "<group>"; };
 		FBF7C5B128155E3D00205362 /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
+		FBF7C5B5281560DD00205362 /* NetwotkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwotkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,38 @@
 			children = (
 				FBF7C59B28155D2900205362 /* AppDelegate.swift */,
 				FBF7C59D28155D2900205362 /* SceneDelegate.swift */,
-				FBF7C5AF28155D7700205362 /* CharactersTableViewController.swift */,
-				FBF7C5B128155E3D00205362 /* Characters.swift */,
+				FBF7C5B7281563B800205362 /* Services */,
+				FBF7C5B4281560C000205362 /* ViewControllers */,
+				FBF7C5B3281560B300205362 /* Model */,
 				FBF7C5A428155D2C00205362 /* Assets.xcassets */,
 				FBF7C5A628155D2C00205362 /* LaunchScreen.storyboard */,
 				FBF7C5A928155D2C00205362 /* Info.plist */,
 			);
 			path = RickAndMortyTestApp;
+			sourceTree = "<group>";
+		};
+		FBF7C5B3281560B300205362 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBF7C5B128155E3D00205362 /* Characters.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FBF7C5B4281560C000205362 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FBF7C5AF28155D7700205362 /* CharactersTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FBF7C5B7281563B800205362 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FBF7C5B5281560DD00205362 /* NetwotkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBF7C5B028155D7700205362 /* CharactersTableViewController.swift in Sources */,
+				FBF7C5B6281560DD00205362 /* NetwotkManager.swift in Sources */,
 				FBF7C59C28155D2900205362 /* AppDelegate.swift in Sources */,
 				FBF7C59E28155D2900205362 /* SceneDelegate.swift in Sources */,
 				FBF7C5B228155E3D00205362 /* Characters.swift in Sources */,
