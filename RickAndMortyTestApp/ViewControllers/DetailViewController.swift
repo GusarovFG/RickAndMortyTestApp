@@ -11,12 +11,12 @@ class DetailViewController: UIViewController {
     
     var character: Character?
     
-    var characterImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-    var nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-    var speciesLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-    var statusLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-    var locationLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-    var episodesCountLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    private var characterImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    private var nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    private var speciesLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    private var statusLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    private var locationLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    private var episodesCountLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     
     
     override func viewDidLoad() {
@@ -88,8 +88,6 @@ class DetailViewController: UIViewController {
         self.statusLabel.text = "Status: \(self.character?.status ?? "")"
         self.locationLabel.text = "Location: \(self.character?.location.name ?? "")"
         self.episodesCountLabel.text = "Count of episodes: \(self.character?.episode.count ?? 0)"
-        
-
     }
     
     private func fetchImage() {

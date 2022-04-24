@@ -11,19 +11,16 @@ class CharactersTableViewController: UITableViewController {
     
     private var characters: RickAndMorty?
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNaviBar()
-
         fetchData(from: URLS.rickAndMortyapi.rawValue)
+        
         self.tableView.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "charCell")
-    
     }
-
+    
     private func fetchData(from url: String?) {
-
         NetworkManager.share.fetchData(url: url) { data in
             self.characters = data
             self.tableView.reloadData()
@@ -39,7 +36,6 @@ class CharactersTableViewController: UITableViewController {
         
         self.navigationItem.leftBarButtonItem = prevBarButton
         self.navigationItem.rightBarButtonItem = nextBarButton
-        
     }
     
     @objc func fetchPrevData() {
@@ -56,18 +52,15 @@ class CharactersTableViewController: UITableViewController {
         }
     }
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return self.characters?.results.count ?? 0
+        self.characters?.results.count ?? 0
     }
-
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "charCell", for: indexPath) as! CharacterTableViewCell
         cell.setupCell(character: self.characters?.results[indexPath.row])
@@ -80,5 +73,5 @@ class CharactersTableViewController: UITableViewController {
         detailVC.character = self.characters?.results[indexPath.row]
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
-
+    
 }
